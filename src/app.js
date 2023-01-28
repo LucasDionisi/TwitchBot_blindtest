@@ -1,12 +1,15 @@
 const tmi = require('tmi.js');
 
+// Retrieve data to connect bot
+const twitchCredentials = require('./config/twitch_credentials.json');
+
 const client = new tmi.Client({
-	options: { debug: true },
+	options: { debug: true }, // False in prod mode
 	identity: {
-		username: 'robodzy',
-		password: 'oauth:my_bot_token'
+		username: twitchCredentials.botname,
+		password: twitchCredentials.oauthKey
 	},
-	channels: [ 'Manisi_' ]
+	channels: twitchCredentials.twitchChannels
 });
 
 client.connect();
