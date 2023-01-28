@@ -1,4 +1,6 @@
 const tmi = require('tmi.js');
+var Scoreboard = require('./utils/Scoreboard.js');
+var scoreboard = new Scoreboard();
 // string-similarity https://npm.runkit.com/string-similarity -> seuil à 0.75 ???
 
 // Retrieve data to connect bot
@@ -31,6 +33,8 @@ client.on('message', (channel, tags, message, self) => {
         if (!isTitleFound) {
             client.say(channel, `Oui, tu as trouvé le titre ! C'était ${music.title} !`);
             isTitleFound = true;
+
+            scoreboard.score(tags.username, 2);
         } else {
             client.say(channel, `Le titre a déjà été trouvé !`);
         }
@@ -43,5 +47,9 @@ client.on('message', (channel, tags, message, self) => {
         } else {
             client.say(channel, `L'artiste a déjà été trouvé !`);
         }
+    }
+
+    if (message === '!score') {
+        console.log(scoreboard.getScoreboard());
     }
 });
