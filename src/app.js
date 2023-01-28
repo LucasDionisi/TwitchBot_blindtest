@@ -1,6 +1,8 @@
 const tmi = require('tmi.js');
-var Scoreboard = require('./utils/Scoreboard.js');
+var Scoreboard = require('./utils/scoreboard.js');
 var scoreboard = new Scoreboard();
+var Songlist = require('./utils/songlist.js');
+var songlist = new Songlist();
 // string-similarity https://npm.runkit.com/string-similarity -> seuil à 0.75 ???
 
 // Retrieve data to connect bot
