@@ -1,18 +1,17 @@
-const Scoreboard = require('../music/Scoreboard.js');
-const scoreboard = new Scoreboard();
+const scoreboard = require('../music/Scoreboard.js');
 
 class CommandsManager {
-    getCommand(command, username) {
-        switch (command) {
+    getCommand(pCommand, pUsername) {
+        switch (pCommand) {
             case 'score':
                 return scoreboard.getScoreboardToChat();
                 break;
         
             default:
-                return 'coucou'
+                return `@${pUsername}, cette commande n'existe pas.`;
                 break;
         }
     }
 }
 
-module.exports = CommandsManager;
+module.exports = new CommandsManager();

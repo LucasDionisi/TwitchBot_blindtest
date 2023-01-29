@@ -42,4 +42,4 @@ class Scoreboard {
     }
 }
 
-module.exports = Scoreboard;
+module.exports = new Scoreboard();

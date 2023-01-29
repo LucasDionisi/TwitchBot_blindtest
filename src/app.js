@@ -1,9 +1,8 @@
 const tmi = require('tmi.js');
-const CommandsManager = require('./utils/bot/CommandsManager.js');
-const cmdMgr = new CommandsManager();
-const Songlist = require('./utils/music/Songlist.js');
-const songlist = new Songlist();
 // string-similarity https://npm.runkit.com/string-similarity -> seuil à 0.75 ???
+const cmdMgr = require('./utils/bot/CommandsManager.js');
+const songlist = require('./utils/music/Songlist.js');
+// const songlist = new Songlist();
 
 // Retrieve data to connect bot
 const twitchCredentials = require('./config/twitch_credentials.json');
@@ -19,9 +18,7 @@ const client = new tmi.Client({
 
 client.connect();
 
-let isTitleFound = false;
-let isArtistFound = false;
-
+songlist.stratGame();
 songlist.addSong('Imagine Dragons', 'Sharks', 2);
 songlist.addSong('Imagine Dragons', 'Radioactive', 2);
 songlist.addSong('Imagine Dragons', 'Demons', 2);
@@ -36,6 +33,10 @@ client.on('message', (channel, tags, message, self) => {
 
         client.say(channel, cmdMgr.getCommand(command, tags.username));
         return;
+    }
+
+    if (songlist.isGameStrated()) {
+        songlist.checkSong(message);
     }
 
     // if (message.toLowerCase() === music.title.toLocaleLowerCase()) {
