@@ -42,8 +42,38 @@ class Songlist {
         return this.songlist[this.currentSong];
     }
 
+    buildCheckResponse (pResponse, pFound, pSolution, pPoints) {
+        pResponse.isOk = true;
+        pResponse.found = pFound;
+        pResponse.solution = pSolution;
+        pResponse.points = pPoints;
+        return pResponse;
+    }
+
     checkSong (pMessage) {
+        var response = {
+            isOk: false
+        }
+
+        var song = this.songlist[this.currentSong];
+
+        if (!this.isPlaying || song === undefined) return response;
+
+        if (pMessage.toLowerCase() === song.artist.toLowerCase()) {
+            if (song.isArtistFound) response.isAlreadyFound = true;
+            song.isArtistFound = true;
+
+            return this.buildCheckResponse (response, 'artist', song.artist, song.points);
+        }
         
+        if (pMessage.toLowerCase() === song.title.toLowerCase()) {
+            if (song.isTitleFound) response.isAlreadyFound = true;
+            song.isTitleFound = true;
+
+            return this.buildCheckResponse (response, 'title', song.title, song.points);
+        }
+
+        return response;
     }
 }
 

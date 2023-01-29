@@ -2,7 +2,7 @@ const tmi = require('tmi.js');
 // string-similarity https://npm.runkit.com/string-similarity -> seuil à 0.75 ???
 const cmdMgr = require('./utils/bot/CommandsManager.js');
 const songlist = require('./utils/music/Songlist.js');
-// const songlist = new Songlist();
+const scoreboard = require('./utils/music/Scoreboard.js');
 
 // Retrieve data to connect bot
 const twitchCredentials = require('./config/twitch_credentials.json');
@@ -36,26 +36,11 @@ client.on('message', (channel, tags, message, self) => {
     }
 
     if (songlist.isGameStrated()) {
-        songlist.checkSong(message);
+        var response = songlist.checkSong(message);
+
+        if (response.isOk && !response.isAlreadyFound) {
+            client.say(channel, `Bravo @${tags.username}, tu as trouvé ${response.found === 'artist' ? "l'artiste"  : "le titre"} qui était ${response.solution} !`);
+            scoreboard.score(tags.username, response.points);
+        }  
     }
-
-    // if (message.toLowerCase() === music.title.toLocaleLowerCase()) {
-    //     if (!isTitleFound) {
-    //         client.say(channel, `Oui, tu as trouvé le titre ! C'était ${music.title} !`);
-    //         isTitleFound = true;
-
-    //         scoreboard.score(tags.username, 2);
-    //     } else {
-    //         client.say(channel, `Le titre a déjà été trouvé !`);
-    //     }
-    // }
-	
-    // if (message.toLowerCase() === music.artist.toLocaleLowerCase()) {
-    //     if (!isArtistFound) {
-    //         client.say(channel, `Oui, tu as trouvé l'artiste ! c'était ${music.artist} !`);
-    //         isArtistFound = true;
-    //     } else {
-    //         client.say(channel, `L'artiste a déjà été trouvé !`);
-    //     }
-    // }
 });
