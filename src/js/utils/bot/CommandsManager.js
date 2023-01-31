@@ -1,10 +1,8 @@
-const scoreboard = require('../music/Scoreboard.js');
-
 class CommandsManager {
     getCommand(pCommand, pUsername) {
         switch (pCommand) {
             case 'score':
-                return scoreboard.getScoreboardToChat();
+                return Scoreboard.getInstace().getScoreboardToChat();
                 break;
         
             default:
@@ -13,5 +11,3 @@ class CommandsManager {
         }
     }
 }
-
-module.exports = new CommandsManager();

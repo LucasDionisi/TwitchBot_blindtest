@@ -1,5 +1,3 @@
-const SongStatus = require('../enums/SongStatus.js');
-
 class Songlist {
     constructor () {
         this.songlist = [];
@@ -76,5 +74,3 @@ class Songlist {
         return response;
     }
 }
-
-module.exports = new Songlist();

@@ -1,6 +1,14 @@
+// Singleton, we want only one scoreboard
 class Scoreboard {
+    static instance = null;
+
     constructor() {
         this.scores = [];
+    }
+
+    static getInstace() {
+        if (Scoreboard.instance === null) Scoreboard.instance = new Scoreboard();
+        return Scoreboard.instance;
     }
 
     getScoreboard () {
@@ -41,5 +49,3 @@ class Scoreboard {
         }
     }
 }
-
-module.exports = new Scoreboard();
