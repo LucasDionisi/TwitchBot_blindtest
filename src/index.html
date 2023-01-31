@@ -5,8 +5,101 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <header>
+        <h1>Bot Twitch - Blindtest</h1>
+    </header>
+    <main>
+        <button class="off" id="startBtn">Démarrer le bot</button>
+
+        <label for="artist">Artiste</label>
+        <input type="text" name="artist" id="artistInput" placeholder="Imagine dragons">
+        <label for="title">Titre</label>
+        <input type="text" name="title" id="titleInput" placeholder="Sharks">
+        <label for="points">Points</label>
+        <input type="number" name="points" id="pointsInput" placeholder="2">
+
+        <button id="addSongBtn">Ajouter</button>
+
+        <table>
+            <thead>
+                <tr>
+                    <th></th> <!-- ID -->
+                    <th>Artiste</th>
+                    <th>Titre</th>
+                    <th>Points</th>
+                    <th></th> <!-- GO -->
+                    <th></th> <!-- Edit -->
+                    <th></th> <!-- Delete -->
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Imagine dragons</td>
+                    <td>Radioactive</td>
+                    <td>2</td>
+                    <td>▶</td> 
+                    <td>🖍</td>
+                    <td>🗑</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Imagine dragons</td>
+                    <td>Deamons</td>
+                    <td>2</td>
+                    <td>▶</td> 
+                    <td>🖍</td>
+                    <td>🗑</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Imagine dragons</td>
+                    <td>Sharks</td>
+                    <td>2</td>
+                    <td>▶</td> 
+                    <td>🖍</td>
+                    <td>🗑</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Imagine dragons</td>
+                    <td>Giants</td>
+                    <td>2</td>
+                    <td>▶</td> 
+                    <td>🖍</td>
+                    <td>🗑</td>
+                </tr>
+            </tbody>
+        </table>
+        <table>
+            <thead>
+                <tr>
+                    <th>Pseudo</th>
+                    <th>Points</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Manisi_</td>
+                    <td>-6</td>
+                </tr>
+                <tr>
+                    <td>K1000Prod</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td>Megaloutre</td>
+                    <td>4</td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+
+    <footer>© 2023 by <a href="https://github.com/LucasDionisi">Lucas Dionisi</a></footer>
+
     <script src="js/libs/tmi.min.js"></script>
     <script src="js/libs/jquery-3.6.3.min.js"></script>
     <script src="js/utils/bot/CommandsManager.js"></script>
@@ -14,5 +107,6 @@
     <script src="js/utils/music/Songlist.js"></script>
     <script src="js/utils/music/Scoreboard.js"></script>
     <script src="js/app.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>
