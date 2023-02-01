@@ -72,11 +72,21 @@ button {
     display: flex;
 }
 
+img#hide {
+    position: relative;
+    left: 1em;
+    top: .5em;
+}
+
 table {
     border-collapse: collapse;
     margin-top: 20px;
     table-layout: auto;
     margin-right: 5em;
+}
+
+#songlist table.blur {
+    filter: blur(5px);
 }
 
 th, td {
