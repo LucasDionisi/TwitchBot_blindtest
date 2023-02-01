@@ -1,46 +1,54 @@
+// Singleton, we want only one songlist
 class Songlist {
-    constructor () {
+    static instance = null;
+
+    constructor() {
         this.songlist = [];
         this.currentSong = 0;
         this.isPlaying = false;
     }
 
-    isGameStrated () {
-        return this.isPlaying;    
+    static getInstance() {
+        if (Songlist.instance === null) Songlist.instance = new Songlist();
+        return Songlist.instance;
     }
 
-    stratGame () {
+    isGameStrated() {
+        return this.isPlaying;
+    }
+
+    stratGame() {
         this.isPlaying = true;
     }
 
-    stopGame () {
+    stopGame() {
         this.isPlaying = false;
     }
 
-    addSong (pArtiste, pTitle, pPoints) {
+    addSong(pArtiste, pTitle, pPoints) {
         this.songlist.push({
             artist: pArtiste,
             isArtistFound: false,
-            title: pTitle, 
+            title: pTitle,
             isTitleFound: false,
             points: pPoints,
             status: SongStatus.ToDo
         })
     }
 
-    nextSong () {
+    nextSong() {
         this.currentSong++;
     }
 
-    getSonglist () {
+    getSonglist() {
         return this.songlist;
     }
 
-    getCurrentSong () {
+    getCurrentSong() {
         return this.songlist[this.currentSong];
     }
 
-    buildCheckResponse (pResponse, pFound, pSolution, pPoints) {
+    buildCheckResponse(pResponse, pFound, pSolution, pPoints) {
         pResponse.isOk = true;
         pResponse.found = pFound;
         pResponse.solution = pSolution;
@@ -48,7 +56,7 @@ class Songlist {
         return pResponse;
     }
 
-    checkSong (pMessage) {
+    checkSong(pMessage) {
         var response = {
             isOk: false
         }
@@ -61,14 +69,14 @@ class Songlist {
             if (song.isArtistFound) response.isAlreadyFound = true;
             song.isArtistFound = true;
 
-            return this.buildCheckResponse (response, 'artist', song.artist, song.points);
+            return this.buildCheckResponse(response, 'artist', song.artist, song.points);
         }
-        
+
         if (pMessage.toLowerCase() === song.title.toLowerCase()) {
             if (song.isTitleFound) response.isAlreadyFound = true;
             song.isTitleFound = true;
 
-            return this.buildCheckResponse (response, 'title', song.title, song.points);
+            return this.buildCheckResponse(response, 'title', song.title, song.points);
         }
 
         return response;

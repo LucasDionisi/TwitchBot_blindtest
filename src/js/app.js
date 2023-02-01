@@ -13,13 +13,15 @@ $.getJSON("config/twitch_credentials.json", function (twitchCredentials) {
 
     client.connect();
 
-    const songlist = new Songlist();
+    const songlist = Songlist.getInstance();
     const cmdMgr = new CommandsManager();
 
     songlist.stratGame();
     songlist.addSong('Imagine Dragons', 'Sharks', 2);
     songlist.addSong('Imagine Dragons', 'Radioactive', 2);
     songlist.addSong('Imagine Dragons', 'Demons', 2);
+
+    run(); // main process in script.js
 
     client.on('message', (channel, tags, message, self) => {
         // Ignore echoed messages.
