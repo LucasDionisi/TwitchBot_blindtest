@@ -38,7 +38,7 @@ $.getJSON("config/twitch_credentials.json", function (twitchCredentials) {
 
             if (response.isOk && !response.isAlreadyFound) {
                 client.say(channel, `Bravo @${tags.username}, tu as trouvé ${response.found === 'artist' ? "l'artiste" : "le titre"} qui était ${response.solution} !`);
-                Scoreboard.getInstace().score(tags.username, response.points);
+                Scoreboard.getInstance().score(tags.username, response.points);
             }
         }
     });

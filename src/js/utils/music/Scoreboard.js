@@ -6,7 +6,7 @@ class Scoreboard {
         this.scores = [];
     }
 
-    static getInstace() {
+    static getInstance() {
         if (Scoreboard.instance === null) Scoreboard.instance = new Scoreboard();
         return Scoreboard.instance;
     }

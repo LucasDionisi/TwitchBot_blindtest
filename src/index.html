@@ -4,26 +4,28 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>TwitchBot - Blindtest</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <header>
-        <h1>Bot Twitch - Blindtest</h1>
+        <h1>TwitchBot - Blindtest</h1>
     </header>
     <main>
         <button class="off" id="startBtn">Démarrer le bot</button>
 
-        <label for="artist">Artiste</label>
-        <input type="text" name="artist" id="artistInput" placeholder="Imagine dragons">
-        <label for="title">Titre</label>
-        <input type="text" name="title" id="titleInput" placeholder="Sharks">
-        <label for="points">Points</label>
-        <input type="number" name="points" id="pointsInput" placeholder="2">
+        <div id="addSongDiv">
+            <label for="artist">Artiste</label>
+            <input type="text" name="artist" id="artistInput" placeholder="Imagine dragons">
+            <label for="title">Titre</label>
+            <input type="text" name="title" id="titleInput" placeholder="Sharks">
+            <label for="points">Points</label>
+            <input type="number" name="points" id="pointsInput" placeholder="2">
+        </div>
 
         <button id="addSongBtn">Ajouter</button>
 
-        <table>
+        <table id="songlist">
             <thead>
                 <tr>
                     <th></th> <!-- ID -->
@@ -41,40 +43,41 @@
                     <td>Imagine dragons</td>
                     <td>Radioactive</td>
                     <td>2</td>
-                    <td>▶</td> 
-                    <td>🖍</td>
-                    <td>🗑</td>
+                    <td><img src="resources/icons/play.svg" alt="start song"></td> 
+                    <td><img src="resources/icons/edit.svg" alt="edit song"></td>
+                    <td><img src="resources/icons/delete.svg" alt="delete song"></td>
                 </tr>
                 <tr>
                     <td>2</td>
                     <td>Imagine dragons</td>
                     <td>Deamons</td>
                     <td>2</td>
-                    <td>▶</td> 
-                    <td>🖍</td>
-                    <td>🗑</td>
+                    <td><img src="resources/icons/play.svg" alt="start song"></td> 
+                    <td><img src="resources/icons/edit.svg" alt="edit song"></td>
+                    <td><img src="resources/icons/delete.svg" alt="delete song"></td>
                 </tr>
                 <tr>
                     <td>3</td>
                     <td>Imagine dragons</td>
                     <td>Sharks</td>
                     <td>2</td>
-                    <td>▶</td> 
-                    <td>🖍</td>
-                    <td>🗑</td>
+                    <td><img src="resources/icons/play.svg" alt="start song"></td> 
+                    <td><img src="resources/icons/edit.svg" alt="edit song"></td>
+                    <td><img src="resources/icons/delete.svg" alt="delete song"></td>
                 </tr>
                 <tr>
                     <td>4</td>
                     <td>Imagine dragons</td>
                     <td>Giants</td>
                     <td>2</td>
-                    <td>▶</td> 
-                    <td>🖍</td>
-                    <td>🗑</td>
+                    <td><img src="resources/icons/play.svg" alt="start song"></td> 
+                    <td><img src="resources/icons/edit.svg" alt="edit song"></td>
+                    <td><img src="resources/icons/delete.svg" alt="delete song"></td>
                 </tr>
             </tbody>
         </table>
-        <table>
+
+        <table id="score">
             <thead>
                 <tr>
                     <th>Pseudo</th>
