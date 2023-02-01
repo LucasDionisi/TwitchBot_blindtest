@@ -25,6 +25,10 @@ class Songlist {
         this.isPlaying = false;
     }
 
+    removeSong(pIndex) {
+        this.songlist.splice(pIndex, 1);
+    }
+
     addSong(pArtiste, pTitle, pPoints) {
         this.songlist.push({
             artist: pArtiste,

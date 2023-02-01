@@ -31,6 +31,7 @@ img.icon {
 
 #addSongDiv {
     display: flex;
+    justify-content: center;
     align-items: center;
     margin-bottom: 2em;
 }
@@ -70,6 +71,7 @@ button {
 
 #tables {
     display: flex;
+    justify-content: center;
 }
 
 img#hide {
@@ -82,11 +84,18 @@ table {
     border-collapse: collapse;
     margin-top: 20px;
     table-layout: auto;
+}
+
+div#songlist table {
     margin-right: 5em;
 }
 
+div#scores table {
+    margin-right: 1em;
+}
+
 #songlist table.blur {
-    filter: blur(5px);
+    filter: blur(.7em);
 }
 
 th, td {
