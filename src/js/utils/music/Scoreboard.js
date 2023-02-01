@@ -3,7 +3,25 @@ class Scoreboard {
     static instance = null;
 
     constructor() {
-        this.scores = [];
+        // TODO, just json instead of jsonArray
+        this.scores = [
+            {
+                user: 'Manisi_',
+                points: 15
+            },
+            {
+                user: 'Moz',
+                points: 8
+            },
+            {
+                user: 'Xanitoss',
+                points: 22
+            },
+            {
+                user: 'K1000prod',
+                points: -2
+            }
+        ];
     }
 
     static getInstance() {
@@ -11,11 +29,11 @@ class Scoreboard {
         return Scoreboard.instance;
     }
 
-    getScoreboard () {
+    getScores() {
         return this.scores;
     }
 
-    getScoreboardToChat () {
+    getScoreboardToChat() {
         var str = "🏅Le score de la session :";
 
         if (this.scores.length > 0) {
@@ -30,7 +48,7 @@ class Scoreboard {
         return str;
     }
 
-    score (pUser, pPoints) {
+    score(pUser, pPoints) {
         var indexOfUser = -1;
         for (var i = 0; i < this.scores.length; i++) {
             if (this.scores[i].user === pUser) {
@@ -38,7 +56,7 @@ class Scoreboard {
                 break;
             }
         }
-        
+
         if (indexOfUser >= 0) { // user exists
             this.scores[indexOfUser].points += pPoints;
         } else {

@@ -1,3 +1,14 @@
+$(document).ready(function() {
+    const scores = Scoreboard.getInstance().getScores();
+
+    var tab = $('table#scores');
+
+    scores.forEach(score => {
+        var elem = "<tr><td>" + score.user + "</td><td>" + score.points + "</td></tr>"; 
+        tab.append(elem);
+    });
+    
+});
 
 $("#addSongBtn").on('click', function () {
     var fields = ["#artistInput", "#titleInput", "#pointsInput"];
@@ -22,11 +33,8 @@ $("#addSongBtn").on('click', function () {
     }
 });
 
-
 $("input").on("input", function () {
     if ($(this).val() !== "") {
         $(this).css("border-color", "");
     }
 });
-
-

@@ -4,9 +4,9 @@ body {
 }
 
 header {
-    background-color: #333;
-    color: white;
+    color: #333;
     padding: 10px;
+    margin-bottom: 2em;
     text-align: center;
 }
 
@@ -20,46 +20,74 @@ h1 {
     margin: 0;
 }
 
-label, input {
-    display: block;
-    margin-bottom: 10px;
+a {
+    color: #333;
 }
 
-input[type="text"], input[type="number"] {
-    padding: 10px;
-    width: 100%;
+img.icon {
+    height: 1.5em;
+    cursor: pointer;
+}
+
+#addSongDiv {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2em;
+}
+
+.inputGroup {
+    display: flex;
+    align-items: center;
+    margin-right: 1em;
+}
+
+label, input {
+    display: block;
+}
+
+input {
+    width: auto;
+    padding: .5em .25em;
     box-sizing: border-box;
+    background-color: rgba(255, 255, 255, 0.692);
     border: 1px solid #ccc;
+    margin-left: .5em;
     border-radius: 5px;
+}
+
+input[type="number"] {
+    width: 4em;
 }
 
 button {
     background-color: #333;
-    color: white;
+    color: rgb(255, 255, 255);
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
 }
 
-.off {
-    background-color: gray;
+#tables {
+    display: flex;
 }
 
 table {
-    width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
+    table-layout: auto;
+    margin-right: 5em;
 }
 
 th, td {
-    border: 1px solid #ccc;
-    padding: 10px;
+    border: 1px solid rgb(66, 64, 64);
+    background-color: rgb(233, 231, 231);
+    padding: .5em;
     text-align: center;
 }
 
 th {
-    background-color: #333;
+    background-color: rgba(51, 51, 51, 0.856);
     color: white;
 }
 
@@ -67,12 +95,4 @@ footer {
     text-align: center;
     margin-top: 20px;
     color: gray;
-}
-
-a {
-    color: #333;
-}
-
-img {
-    height: 1em;
 }
