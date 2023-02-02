@@ -4,24 +4,7 @@ class Scoreboard {
 
     constructor() {
         // TODO, just json instead of jsonArray
-        this.scores = [
-            {
-                user: 'Manisi_',
-                points: 15
-            },
-            {
-                user: 'Moz',
-                points: 8
-            },
-            {
-                user: 'Xanitoss',
-                points: 22
-            },
-            {
-                user: 'K1000prod',
-                points: -2
-            }
-        ];
+        this.scores = [];
     }
 
     static getInstance() {
@@ -51,7 +34,7 @@ class Scoreboard {
     score(pUser, pPoints) {
         var indexOfUser = -1;
         for (var i = 0; i < this.scores.length; i++) {
-            if (this.scores[i].user === pUser) {
+            if (this.scores[i].user.toLocaleLowerCase() === pUser.toLocaleLowerCase()) {
                 indexOfUser = i;
                 break;
             }

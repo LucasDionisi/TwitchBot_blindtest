@@ -64,6 +64,7 @@ class Client {
             if (response.isOk && !response.isAlreadyFound) {
                 this.tmiClient.say(channel, `Bravo @${tags.username}, tu as trouvé ${response.found === 'artist' ? "l'artiste" : "le titre"} qui était ${response.solution} !`);
                 Scoreboard.getInstance().score(tags.username, response.points);
+                refreshScoreboard();
             }
         }
     }
