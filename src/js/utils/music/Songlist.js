@@ -29,13 +29,15 @@ class Songlist {
         this.songlist.splice(pIndex, 1);
     }
 
-    addSong(pArtiste, pTitle, pPoints) {
+    addSong(pArtiste, pTitle, pPenality, pPoints) {
         this.songlist.push({
             isAlreadyPlayed: false,
             artist: pArtiste,
             isArtistFound: false,
             title: pTitle,
             isTitleFound: false,
+            penality: pPenality,
+            isPenalityFound: false,
             points: pPoints,
             status: SongStatus.ToDo
         })
@@ -48,6 +50,9 @@ class Songlist {
     setCurrentSong(pCurrentSongIndex) {
         this.currentSong = pCurrentSongIndex;
         this.songlist[this.currentSong].isAlreadyPlayed = true;
+        this.songlist[this.currentSong].isArtistFound = false;
+        this.songlist[this.currentSong].isTitleFound = false;
+        this.songlist[this.currentSong].isPenalityFound = false;
     }
 
     getCurrentSong() {
@@ -64,7 +69,8 @@ class Songlist {
 
     checkSong(pMessage) {
         var response = {
-            isOk: false
+            isOk: false,
+            isAlreadyFound: false
         }
 
         var song = this.songlist[this.currentSong];
@@ -82,6 +88,13 @@ class Songlist {
             song.isTitleFound = true;
 
             return this.buildCheckResponse(response, 'title', song.title, song.points);
+        }
+
+        if (pMessage.toLowerCase() === song.penality.toLowerCase()) {
+            if (song.isPenalityFound) response.isAlreadyFound = true;
+            song.isPenalityFound = true;
+
+            return this.buildCheckResponse(response, 'penality', song.penality, -song.points);
         }
 
         return response;

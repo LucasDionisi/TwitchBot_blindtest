@@ -9,9 +9,9 @@ class Client {
             this.cmdMgr = new CommandsManager();
 
             this.songlist.stratGame();
-            this.songlist.addSong('Imagine Dragons', 'Sharks', 2);
-            this.songlist.addSong('Imagine Dragons', 'Radioactive', 2);
-            this.songlist.addSong('Imagine Dragons', 'Demons', 2);
+            this.songlist.addSong('Imagine Dragons', 'Sharks', 'u2', 2);
+            this.songlist.addSong('Imagine Dragons', 'Radioactive', 'u2', 2);
+            this.songlist.addSong('Imagine Dragons', 'Demons', 'u2', 2);
 
             onClientStrarted(); // onClientStrarteds in script.js
 
@@ -62,7 +62,8 @@ class Client {
             var response = this.songlist.checkSong(message);
 
             if (response.isOk && !response.isAlreadyFound) {
-                this.tmiClient.say(channel, `Bravo @${tags.username}, tu as trouvé ${response.found === 'artist' ? "l'artiste" : "le titre"} qui était ${response.solution} !`);
+                if (response.points < 0) this.tmiClient.say(channel, `Bravo @${tags.username}, tu es tombé dans le piège ! Le malus était bien ${response.solution}. Tu perds ${Math.abs(response.points)} points !`);
+                else this.tmiClient.say(channel, `Bravo @${tags.username}, tu as trouvé ${response.found === 'artist' ? "l'artiste" : "le titre"} qui était ${response.solution} ! Tu marques ${response.points} points.`);
                 Scoreboard.getInstance().score(tags.username, response.points);
                 refreshScoreboard();
             }
