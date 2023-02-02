@@ -12,6 +12,10 @@ class Scoreboard {
         return Scoreboard.instance;
     }
 
+    setScoreboard(pSocres) {
+        this.scores = pSocres;
+    }
+
     getScores() {
         return this.scores;
     }
@@ -48,5 +52,7 @@ class Scoreboard {
                 points: parseInt(pPoints)
             });
         }
+
+        cookieManager.addCookie('score', JSON.stringify(this.scores));
     }
 }

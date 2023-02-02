@@ -9,9 +9,6 @@ class Client {
             this.cmdMgr = new CommandsManager();
 
             this.songlist.stratGame();
-            this.songlist.addSong('Imagine Dragons', 'Sharks', 'u2', 2);
-            this.songlist.addSong('Imagine Dragons', 'Radioactive', 'u2', 2);
-            this.songlist.addSong('Imagine Dragons', 'Demons', 'u2', 2);
 
             onClientStrarted(); // onClientStrarteds in script.js
 

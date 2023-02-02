@@ -28,6 +28,8 @@ class Songlist {
 
     removeSong(pIndex) {
         this.songlist.splice(pIndex, 1);
+
+        cookieManager.addCookie('songlist', JSON.stringify(this.songlist));
     }
 
     addSong(pArtiste, pTitle, pPenality, pPoints) {
@@ -41,7 +43,13 @@ class Songlist {
             isPenalityFound: false,
             points: pPoints,
             status: SongStatus.ToDo
-        })
+        });
+
+        cookieManager.addCookie('songlist', JSON.stringify(this.songlist));
+    }
+
+    setSonglist(pSonglist) {
+        this.songlist = pSonglist;
     }
 
     getSonglist() {
@@ -51,6 +59,7 @@ class Songlist {
     setCurrentSong(pCurrentSongIndex) {
         this.currentSong = pCurrentSongIndex;
         this.songlist[this.currentSong].isAlreadyPlayed = true;
+        cookieManager.addCookie('songlist', JSON.stringify(this.songlist));
         this.songlist[this.currentSong].isArtistFound = false;
         this.songlist[this.currentSong].isTitleFound = false;
         this.songlist[this.currentSong].isPenalityFound = false;

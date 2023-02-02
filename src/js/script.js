@@ -1,4 +1,16 @@
 function onClientStrarted() {
+    try {
+        Songlist.getInstance().setSonglist(JSON.parse(cookieManager.getCookie('songlist')));
+    } catch (error) {
+        toastMessage.sendInfo('Impossible de récupérer la précédente songlist.');
+    }
+    
+    try {
+        Scoreboard.getInstance().setScoreboard(JSON.parse(cookieManager.getCookie('score')));
+    } catch (error) {
+        toastMessage.sendInfo('Impossible de récupérer le précédent tableau des scores.');
+    }
+
     refreshSongList();
     refreshScoreboard();
 }
