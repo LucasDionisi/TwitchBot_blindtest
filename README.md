@@ -30,7 +30,7 @@ Note: Vous pouvez utiliser votre propre compte Twitch, si vous voulez utiliser v
 
 
 ### 📚 Libs
-[EN] _The librairies used are [tmi js](https://tmijs.com/) and [jQuery](https://jquery.com/)._
+[EN] _The librairies used are: [tmi js](https://tmijs.com/) and [jQuery](https://jquery.com/)._
 
 [FR] _Les librairies utilisées sont : [tmi js](https://tmijs.com/) et [jQuery](https://jquery.com/)._
 
