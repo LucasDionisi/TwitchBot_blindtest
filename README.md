@@ -2,7 +2,7 @@
 
 ## ⚙ Installation
 
-### Setup bot / installation du bot
+### 📝 Setup bot / installation du bot
 [EN] In folder ``src/config/`` duplicate the file ``twitch_credentials_template.json`` in ``twitch_credentials.json``. Open file and replace data bellow with your bot name, the token and the twitch channel where the robot will be used.
 
 [FR] Dans le dossier ``src/config/`` vous devez dupliquer le fichier ``twitch_credentials_template.json`` en ``twitch_credentials.json``. Ouvrez le fichier et remplacez les données ci dessous avec le nom de votre bot, son jeton d'authentification et le nom de la chaine twitch ou le bot sera utilisé.
@@ -15,7 +15,7 @@
 }
 ```
 
-### Where find the twitch token? / Ou trouver le token twitch ?
+### 🔏 Where find the twitch token? / Ou trouver le token twitch ?
 [EN] First, you have to create a [Twitch](https://www.twitch.tv/) account for your bot.
 
 Retrieve your [Twitch token](https://twitchapps.com/tmi/) and don't share it! This token permit to have a full control on your new twitch account.
@@ -29,7 +29,7 @@ Récupérer votre [token Twitch](https://twitchapps.com/tmi/) et ne le partagez 
 Note: Vous pouvez utiliser votre propre compte Twitch, si vous voulez utiliser votre pseudo comme bot.
 
 
-### Libs
+### 📚 Libs
 [EN] _You can retrieve tmi js [here](https://tmijs.com/) and jQuery [here](https://jquery.com/)._
 
 [FR] _Vous pouvez retrouver tmi js [ici](https://tmijs.com/) et jQuery [ici](https://jquery.com/)._
