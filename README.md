@@ -2,7 +2,7 @@
 
 ## ⚙ Installation
 
-### 📝 Setup bot / installation du bot
+### 📝 Setup bot / Installation du bot
 [EN] In folder ``src/config/`` duplicate the file ``twitch_credentials_template.json`` in ``twitch_credentials.json``. Open file and replace data bellow with your bot name, the token and the twitch channel where the robot will be used.
 
 [FR] Dans le dossier ``src/config/`` vous devez dupliquer le fichier ``twitch_credentials_template.json`` en ``twitch_credentials.json``. Ouvrez le fichier et remplacez les données ci dessous avec le nom de votre bot, son jeton d'authentification et le nom de la chaine twitch ou le bot sera utilisé.
