@@ -48,8 +48,25 @@ function refreshScoreboard() {
     tabScore.empty();
 
     scores.forEach(score => {
-        var elem = `<tr><td>${score.user}</td><td>${score.points}</td></tr>`;
+        var elem = `
+            <tr>
+                <td>${score.user}</td>
+                <td>${score.points}</td>
+                <td><img class="icon minus" src="resources/icons/minus.svg" title="-1 points" alt="remove point" data-user="${score.user}"></td>
+                <td><img class="icon add" src="resources/icons/add.svg" title="+1 points" alt="add point" data-user="${score.user}"></td>
+            </tr>
+        `;
         tabScore.append(elem);
+    });
+
+    $('img.minus').on('click', function () {
+        Scoreboard.getInstance().score(this.dataset.user, -1);
+        refreshScoreboard();
+    });
+
+    $('img.add').on('click', function () {
+        Scoreboard.getInstance().score(this.dataset.user, 1);
+        refreshScoreboard();
     });
 }
 
