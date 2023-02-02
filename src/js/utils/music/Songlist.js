@@ -4,7 +4,7 @@ class Songlist {
 
     constructor() {
         this.songlist = [];
-        this.currentSong = 0;
+        this.currentSong = -1;
         this.isPlaying = false;
     }
 
@@ -40,12 +40,12 @@ class Songlist {
         })
     }
 
-    nextSong() {
-        this.currentSong++;
-    }
-
     getSonglist() {
         return this.songlist;
+    }
+
+    setCurrentSong(pCurrentSongIndex) {
+        this.currentSong = pCurrentSongIndex;
     }
 
     getCurrentSong() {
@@ -66,7 +66,6 @@ class Songlist {
         }
 
         var song = this.songlist[this.currentSong];
-
         if (!this.isPlaying || song === undefined) return response;
 
         if (pMessage.toLowerCase() === song.artist.toLowerCase()) {

@@ -1,4 +1,4 @@
-function run() {
+function onClientStrarted() {
     refreshSongList();
     refreshScoreboard();
 }
@@ -16,13 +16,19 @@ function refreshSongList() {
                 <td>${song.artist}</td>
                 <td>${song.title}</td>
                 <td>${song.points}</td>
-                <td><img class="icon play" src="resources/icons/play.svg" title="GO" alt="start song"></td>
+                <td><img class="icon play" src="resources/icons/play.svg" title="GO" alt="start song" data-index="${index}"></td>
                 <td><img class="icon edit" src="resources/icons/edit.svg" title="edit" alt="edit a song"></td>
                 <td><img class="icon delete" src="resources/icons/delete.svg" title="supprimer" alt="start song" data-index="${index}">
                 </td>
             </tr>
         `;
         tabSonglist.append(elem);
+    });
+
+    $('img.play').on('click', function () {
+        Songlist.getInstance().setCurrentSong(this.dataset.index);
+        Client.getInstance().sendMessage(`Le bot est a l'écoute d'une musique !`);
+        // colorize bg color
     });
 
     $('img.delete').on('click', function () {
