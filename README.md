@@ -15,7 +15,7 @@
 }
 ```
 
-### 🔏 Where find the twitch token? / Ou trouver le token twitch ?
+### 🔏 Where find the twitch token? / Où trouver le token twitch ?
 [EN] First, you have to create a [Twitch](https://www.twitch.tv/) account for your bot.
 
 Retrieve your [Twitch token](https://twitchapps.com/tmi/) and don't share it! This token permit to have a full control on your new twitch account.
