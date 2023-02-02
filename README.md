@@ -34,6 +34,11 @@ Note: Vous pouvez utiliser votre propre compte Twitch, si vous voulez utiliser v
 
 [FR] _Les librairies utilisées sont : [tmi js](https://tmijs.com/), [jQuery](https://jquery.com/) et [jQuery toast](https://github.com/kamranahmedse/jquery-toast-plugin)._
 
+## 💡 Informations
+[EN] Bot messages are written in french. In a future version, the choice of the language will be possible.
+
+[FR] Les messages du bot sont écrits en français. Dans une prochaine version, le choix de la langue sera possible.
+
 ## 🙏 Support me
 [EN] You can use this bot for free. If you want to support me, you can donate [here](https://www.paypal.me/lucasdionisi) 🤩.
 
