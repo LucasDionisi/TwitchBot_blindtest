@@ -30,9 +30,9 @@ Note: Vous pouvez utiliser votre propre compte Twitch, si vous voulez utiliser v
 
 
 ### 📚 Libs
-[EN] _You can retrieve tmi js [here](https://tmijs.com/) and jQuery [here](https://jquery.com/)._
+[EN] _The librairies used are [tmi js](https://tmijs.com/) and [jQuery](https://jquery.com/)._
 
-[FR] _Vous pouvez retrouver tmi js [ici](https://tmijs.com/) et jQuery [ici](https://jquery.com/)._
+[FR] _Les librairies utilisées sont : [tmi js](https://tmijs.com/) et [jQuery](https://jquery.com/)._
 
 ## 🙏 Support me
 [EN] You can use this bot for free. If you want to support me, you can donate [here](https://www.paypal.me/lucasdionisi) 🤩.
