@@ -1,5 +1,3 @@
-// // string-similarity https://npm.runkit.com/string-similarity -> seuil à 0.75 ???
-
 class Client {
     static instance = null;
 
@@ -40,7 +38,12 @@ class Client {
 
         this.channels = twitchCredentials.twitchChannels;
 
-        this.tmiClient.connect();
+        this.tmiClient.connect().then(() => {
+            toastMessage.sendSuccess('Le bot est bien connecté !');
+          })
+          .catch(err => {
+            toastMessage.sendError(`Le bot n'a pas réussi a se connecter. Vérifiez les données du fichier twitch_credentials.json`);
+          });
     }
 
     onMessage(channel, tags, message, self) {

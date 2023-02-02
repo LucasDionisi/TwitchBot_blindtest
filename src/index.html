@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TwitchBot - Blindtest</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/libs/jquery.toast.min.css">
 </head>
 
 <body>
@@ -41,7 +42,7 @@
                             <th>Titre</th>
                             <th>Points</th>
                             <th></th> <!-- GO -->
-                            <th></th> <!-- Edit -->
+                            <!-- <th></th> Edit -->
                             <th></th> <!-- Delete -->
                         </tr>
                     </thead>
@@ -66,8 +67,11 @@
 
     <footer>© 2023 by <a href="https://github.com/LucasDionisi" target="_blank">Lucas Dionisi</a></footer>
 
+    <!-- string-similarity https://npm.runkit.com/string-similarity -> seuil à 0.75 ??? -->
     <script src="js/libs/tmi.min.js"></script>
     <script src="js/libs/jquery-3.6.3.min.js"></script>
+    <script src="js/libs/jquery.toast.min.js"></script>
+    <script src="js/utils/tools/ToastMessages.js"></script>
     <script src="js/utils/bot/CommandsManager.js"></script>
     <script src="js/utils/enums/SongStatus.js"></script>
     <script src="js/utils/music/Songlist.js"></script>

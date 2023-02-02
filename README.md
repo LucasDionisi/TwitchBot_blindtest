@@ -30,9 +30,9 @@ Note: Vous pouvez utiliser votre propre compte Twitch, si vous voulez utiliser v
 
 
 ### 📚 Libs
-[EN] _The librairies used are: [tmi js](https://tmijs.com/) and [jQuery](https://jquery.com/)._
+[EN] _The librairies used are: [tmi js](https://tmijs.com/), [jQuery](https://jquery.com/) and [jQuery toast](https://github.com/kamranahmedse/jquery-toast-plugin)._
 
-[FR] _Les librairies utilisées sont : [tmi js](https://tmijs.com/) et [jQuery](https://jquery.com/)._
+[FR] _Les librairies utilisées sont : [tmi js](https://tmijs.com/), [jQuery](https://jquery.com/) et [jQuery toast](https://github.com/kamranahmedse/jquery-toast-plugin)._
 
 ## 🙏 Support me
 [EN] You can use this bot for free. If you want to support me, you can donate [here](https://www.paypal.me/lucasdionisi) 🤩.

@@ -9,7 +9,9 @@ function refreshSongList() {
     var tabSonglist = $('div#songlist table tbody');
     tabSonglist.empty();
 
-    songlist.forEach((song, index )=> {
+    songlist.forEach((song, index) => {
+        // Possible to add column to edit
+        // <td><img class="icon edit" src="resources/icons/edit.svg" title="edit" alt="edit a song"></td>
         var elem = `
             <tr>
                 <td>${index+1}</td>
@@ -17,7 +19,6 @@ function refreshSongList() {
                 <td>${song.title}</td>
                 <td>${song.points}</td>
                 <td><img class="icon play" src="resources/icons/play.svg" title="GO" alt="start song" data-index="${index}"></td>
-                <td><img class="icon edit" src="resources/icons/edit.svg" title="edit" alt="edit a song"></td>
                 <td><img class="icon delete" src="resources/icons/delete.svg" title="supprimer" alt="start song" data-index="${index}">
                 </td>
             </tr>
@@ -27,12 +28,14 @@ function refreshSongList() {
 
     $('img.play').on('click', function () {
         Songlist.getInstance().setCurrentSong(this.dataset.index);
-        Client.getInstance().sendMessage(`Le bot est a l'écoute d'une musique !`);
+        Client.getInstance().sendMessage(`🔔 Une nouvelle manche est en cours, a vos marques, prêt, écrivez !!`);
+        toastMessage.sendInfo('Nouvelle musique en cours.');
         // colorize bg color
     });
 
     $('img.delete').on('click', function () {
         Songlist.getInstance().removeSong(this.dataset.index);
+        toastMessage.sendInfo('La musique a bien été supprimée.');
         refreshSongList();
     })
 }
@@ -64,12 +67,13 @@ $('#addSongBtn').on('click', function () {
     }
 
     if (!isValid) {
-        alert('Veuillez remplir tous les champs.');
+        toastMessage.sendError('Veuillez remplir tous les champs.');
     } else {
         const artist = $('#artistInput').val();
         const title  = $('#titleInput').val();
         const points = $('#pointsInput').val();
 
+        toastMessage.sendInfo('La musique a bien été ajoutée.');
         Songlist.getInstance().addSong(artist, title, points);
         refreshSongList();
     }
