@@ -100,7 +100,6 @@ div#scores table {
 
 th, td {
     border: 1px solid rgb(66, 64, 64);
-    background-color: rgb(233, 231, 231);
     padding: .5em;
     text-align: center;
 }
@@ -108,6 +107,10 @@ th, td {
 th {
     background-color: rgba(51, 51, 51, 0.856);
     color: white;
+}
+
+tr.done {
+    background-color: rgba(74, 139, 54, 0.692);
 }
 
 footer {

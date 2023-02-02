@@ -31,6 +31,7 @@ class Songlist {
 
     addSong(pArtiste, pTitle, pPoints) {
         this.songlist.push({
+            isAlreadyPlayed: false,
             artist: pArtiste,
             isArtistFound: false,
             title: pTitle,
@@ -46,6 +47,7 @@ class Songlist {
 
     setCurrentSong(pCurrentSongIndex) {
         this.currentSong = pCurrentSongIndex;
+        this.songlist[this.currentSong].isAlreadyPlayed = true;
     }
 
     getCurrentSong() {

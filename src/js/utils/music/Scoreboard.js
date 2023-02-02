@@ -41,11 +41,11 @@ class Scoreboard {
         }
 
         if (indexOfUser >= 0) { // user exists
-            this.scores[indexOfUser].points += pPoints;
+            this.scores[indexOfUser].points += parseInt(pPoints);
         } else {
             this.scores.push({
                 user: pUser,
-                points: pPoints
+                points: parseInt(pPoints)
             });
         }
     }

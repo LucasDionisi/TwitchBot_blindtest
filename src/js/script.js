@@ -13,7 +13,7 @@ function refreshSongList() {
         // Possible to add column to edit
         // <td><img class="icon edit" src="resources/icons/edit.svg" title="edit" alt="edit a song"></td>
         var elem = `
-            <tr>
+            <tr class="${song.isAlreadyPlayed ? 'done': ''}">
                 <td>${index+1}</td>
                 <td>${song.artist}</td>
                 <td>${song.title}</td>
@@ -30,7 +30,7 @@ function refreshSongList() {
         Songlist.getInstance().setCurrentSong(this.dataset.index);
         Client.getInstance().sendMessage(`🔔 Une nouvelle manche est en cours, a vos marques, prêt, écrivez !!`);
         toastMessage.sendInfo('Nouvelle musique en cours.');
-        // colorize bg color
+        this.parentElement.parentElement.classList.add('done');
     });
 
     $('img.delete').on('click', function () {
