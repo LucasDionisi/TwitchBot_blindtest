@@ -30,9 +30,9 @@ Note: Vous pouvez utiliser votre propre compte Twitch, si vous voulez utiliser v
 
 
 ### 📚 Libs
-[EN] _The librairies used are: [tmi js](https://tmijs.com/), [jQuery](https://jquery.com/) and [jQuery toast](https://github.com/kamranahmedse/jquery-toast-plugin)._
+[EN] _The librairies used are: [Tmi js](https://tmijs.com/), [String similarity](https://npm.runkit.com/string-similarity), [jQuery](https://jquery.com/) and [jQuery toast](https://github.com/kamranahmedse/jquery-toast-plugin)._
 
-[FR] _Les librairies utilisées sont : [tmi js](https://tmijs.com/), [jQuery](https://jquery.com/) et [jQuery toast](https://github.com/kamranahmedse/jquery-toast-plugin)._
+[FR] _Les librairies utilisées sont : [Tmi js](https://tmijs.com/), [String similarity](https://npm.runkit.com/string-similarity), [jQuery](https://jquery.com/) et [jQuery toast](https://github.com/kamranahmedse/jquery-toast-plugin)._
 
 ## 💡 Informations
 [EN] Bot messages are written in french. In a future version, the choice of the language will be possible.

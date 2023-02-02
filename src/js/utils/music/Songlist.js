@@ -4,6 +4,7 @@ class Songlist {
 
     constructor() {
         this.songlist = [];
+        this.threshold = 0.8; // To compare two strings (stringsimilarity)
         this.currentSong = -1;
         this.isPlaying = false;
     }
@@ -76,21 +77,21 @@ class Songlist {
         var song = this.songlist[this.currentSong];
         if (!this.isPlaying || song === undefined) return response;
 
-        if (pMessage.toLowerCase() === song.artist.toLowerCase()) {
+        if (stringSimilarity.compareTwoStrings(pMessage.toLowerCase(), song.artist.toLowerCase()) > this.threshold) {
             if (song.isArtistFound) response.isAlreadyFound = true;
             song.isArtistFound = true;
 
             return this.buildCheckResponse(response, 'artist', song.artist, song.points);
         }
 
-        if (pMessage.toLowerCase() === song.title.toLowerCase()) {
+        if (stringSimilarity.compareTwoStrings(pMessage.toLowerCase(), song.title.toLowerCase()) > this.threshold) {
             if (song.isTitleFound) response.isAlreadyFound = true;
             song.isTitleFound = true;
 
             return this.buildCheckResponse(response, 'title', song.title, song.points);
         }
 
-        if (pMessage.toLowerCase() === song.penality.toLowerCase()) {
+        if (stringSimilarity.compareTwoStrings(pMessage.toLowerCase(), song.penality.toLowerCase()) > this.threshold) {
             if (song.isPenalityFound) response.isAlreadyFound = true;
             song.isPenalityFound = true;
 
