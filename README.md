@@ -88,3 +88,9 @@ Les prochaines mises a jour :
 - Information sur l'interface quand la musique a été trouvée.
 - Ajout de widgets pour OBS.
 - Possibilité de modifier le seuil de StringSimilarity.
+
+## 💌 Remarks or Questions / Remarques ou Questions
+---
+[EN] If you have a question or a remark, do not hesitate. I remain available here for well by mail : lucas.dionisi@pro
+
+[FR] Si vous avez une question ou une remarque, n'hésitez pas. Je reste disponnible ici pour bien par mail : lucas.dionisi@pro
