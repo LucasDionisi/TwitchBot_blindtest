@@ -75,4 +75,16 @@ Note: Vous pouvez utiliser votre propre compte Twitch, si vous voulez utiliser v
 ---
 [EN] Bot messages are written in french. In a future version, the choice of the language will be possible.
 
+The next updates :
+- Adding points to a user not listed in the scoreboard.
+- Information on the interface when music has been found.
+- Add widgets for OBS.
+- Possibility to change the StringSimilarity threshold.
+
 [FR] Les messages du bot sont écrits en français. Dans une prochaine version, le choix de la langue sera possible.
+
+Les prochaines mises a jour :
+- Ajout de points à un utilisateur n'étant pas inscrit dans le tableau des scores.
+- Information sur l'interface quand la musique a été trouvée.
+- Ajout de widgets pour OBS.
+- Possibilité de modifier le seuil de StringSimilarity.
