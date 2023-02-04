@@ -82,6 +82,13 @@ function refreshScoreboard() {
     });
 }
 
+$('#addSongDiv input').keypress((e) => {
+    if (e.keyCode === 13) { // press enter key
+        e.preventDefault();
+        $('#addSongBtn').click();
+    }
+});
+
 $('#addSongBtn').on('click', function () {
     var fields = ['#artistInput', '#titleInput', '#penalityInput', '#pointsInput'];
     var isValid = true;
