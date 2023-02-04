@@ -29,7 +29,7 @@ function refreshSongList() {
                 <td>${index+1}</td>
                 <td>${song.artist}</td>
                 <td>${song.title}</td>
-                <td>${song.penality}</td>
+                <td>${song.penalty}</td>
                 <td>${song.points}</td>
                 <td><img class="icon play" src="resources/icons/play.svg" title="GO" alt="start song" data-index="${index}"></td>
                 <td><img class="icon delete" src="resources/icons/delete.svg" title="supprimer" alt="start song" data-index="${index}">
@@ -92,7 +92,7 @@ $('#addSongDiv input').keypress((e) => {
 });
 
 $('#addSongBtn').on('click', function () {
-    var fields = ['#artistInput', '#titleInput', '#penalityInput', '#pointsInput'];
+    var fields = ['#artistInput', '#titleInput', '#penaltyInput', '#pointsInput'];
     var isValid = true;
 
     for (var i = 0; i < fields.length; i++) {
@@ -110,11 +110,11 @@ $('#addSongBtn').on('click', function () {
     } else {
         const artist = $('#artistInput').val();
         const title  = $('#titleInput').val();
-        const penality = $('#penalityInput').val();
+        const penalty = $('#penaltyInput').val();
         const points = $('#pointsInput').val();
 
         toastMessage.sendInfo('La musique a bien été ajoutée.');
-        Songlist.getInstance().addSong(artist, title, penality, points);
+        Songlist.getInstance().addSong(artist, title, penalty, points);
         refreshSongList();
     }
 });

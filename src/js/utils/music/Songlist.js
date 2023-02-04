@@ -32,15 +32,15 @@ class Songlist {
         cookieManager.addCookie('songlist', JSON.stringify(this.songlist));
     }
 
-    addSong(pArtiste, pTitle, pPenality, pPoints) {
+    addSong(pArtiste, pTitle, pPenalty, pPoints) {
         this.songlist.push({
             isAlreadyPlayed: false,
             artist: pArtiste,
             isArtistFound: false,
             title: pTitle,
             isTitleFound: false,
-            penality: pPenality,
-            isPenalityFound: false,
+            penalty: pPenalty,
+            ispenaltyFound: false,
             points: pPoints,
             status: SongStatus.ToDo
         });
@@ -62,7 +62,7 @@ class Songlist {
         cookieManager.addCookie('songlist', JSON.stringify(this.songlist));
         this.songlist[this.currentSong].isArtistFound = false;
         this.songlist[this.currentSong].isTitleFound = false;
-        this.songlist[this.currentSong].isPenalityFound = false;
+        this.songlist[this.currentSong].ispenaltyFound = false;
     }
 
     getCurrentSong() {
@@ -100,11 +100,11 @@ class Songlist {
             return this.buildCheckResponse(response, 'title', song.title, song.points);
         }
 
-        if (stringSimilarity.compareTwoStrings(pMessage.toLowerCase(), song.penality.toLowerCase()) > this.threshold) {
-            if (song.isPenalityFound) response.isAlreadyFound = true;
-            song.isPenalityFound = true;
+        if (stringSimilarity.compareTwoStrings(pMessage.toLowerCase(), song.penalty.toLowerCase()) > this.threshold) {
+            if (song.ispenaltyFound) response.isAlreadyFound = true;
+            song.ispenaltyFound = true;
 
-            return this.buildCheckResponse(response, 'penality', song.penality, -song.points);
+            return this.buildCheckResponse(response, 'penalty', song.penalty, -song.points);
         }
 
         return response;
