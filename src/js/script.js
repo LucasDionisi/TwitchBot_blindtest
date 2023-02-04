@@ -44,6 +44,8 @@ function refreshSongList() {
         Client.getInstance().sendMessage(`🔔 Une nouvelle manche est en cours, a vos marques, prêt, écrivez !!`);
         toastMessage.sendInfo('Nouvelle musique en cours.');
         this.parentElement.parentElement.classList.add('done');
+        $('.recording').removeClass('recording');
+        this.classList.add('recording');
     });
 
     $('img.delete').on('click', function () {

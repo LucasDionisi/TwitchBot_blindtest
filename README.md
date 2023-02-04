@@ -1,5 +1,10 @@
 # TwitchBot_blindtest
 
+## 🙏 Support me
+[EN] You can use this bot for free. If you want to support me, you can donate [here](https://www.paypal.me/lucasdionisi) 🤩.
+
+[FR] Vous pouvez utiliser gratuitement ce bot. Si vous voulez me soutenir, vous pouvez faire une donation [ici](https://www.paypal.me/lucasdionisi) 🤩.
+
 ## ⚙ Installation
 
 ### 📝 Setup bot / Installation du bot
@@ -28,18 +33,15 @@ Récupérer votre [token Twitch](https://twitchapps.com/tmi/) et ne le partagez 
 
 Note: Vous pouvez utiliser votre propre compte Twitch, si vous voulez utiliser votre pseudo comme bot.
 
-
 ### 📚 Libs
 [EN] _The librairies used are: [Tmi js](https://tmijs.com/), [String similarity](https://npm.runkit.com/string-similarity), [jQuery](https://jquery.com/) and [jQuery toast](https://github.com/kamranahmedse/jquery-toast-plugin)._
 
 [FR] _Les librairies utilisées sont : [Tmi js](https://tmijs.com/), [String similarity](https://npm.runkit.com/string-similarity), [jQuery](https://jquery.com/) et [jQuery toast](https://github.com/kamranahmedse/jquery-toast-plugin)._
 
+## 🤯 How does it work? / Comment ça fonctionne ?
+TODO
+
 ## 💡 Informations
 [EN] Bot messages are written in french. In a future version, the choice of the language will be possible.
 
 [FR] Les messages du bot sont écrits en français. Dans une prochaine version, le choix de la langue sera possible.
-
-## 🙏 Support me
-[EN] You can use this bot for free. If you want to support me, you can donate [here](https://www.paypal.me/lucasdionisi) 🤩.
-
-[FR] Vous pouvez utiliser gratuitement ce bot. Si vous voulez me soutenir, vous pouvez faire une donation [ici](https://www.paypal.me/lucasdionisi) 🤩.

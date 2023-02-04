@@ -29,6 +29,33 @@ img.icon {
     cursor: pointer;
 }
 
+img.recording {
+    content: url('/src/resources/icons/recording.svg');
+    animation: blink 4s linear infinite;
+}
+
+@keyframes blink {
+    0% {
+        opacity: 0;
+    }
+
+    25% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    75% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
 #addSongDiv {
     display: flex;
     justify-content: center;
@@ -42,7 +69,8 @@ img.icon {
     margin-right: 1em;
 }
 
-label, input {
+label,
+input {
     display: block;
 }
 
@@ -98,7 +126,8 @@ div#scores table {
     filter: blur(.7em);
 }
 
-th, td {
+th,
+td {
     border: 1px solid rgb(66, 64, 64);
     padding: .5em;
     text-align: center;
