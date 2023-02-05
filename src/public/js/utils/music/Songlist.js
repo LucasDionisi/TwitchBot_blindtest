@@ -26,10 +26,20 @@ class Songlist {
         this.isPlaying = false;
     }
 
+    updateServerSongList() {
+        $.ajax({
+            type: "POST",
+            url: "/api/songlist",
+            dataType: 'json',
+            contentType: 'application/json',
+            data: JSON.stringify(this.songlist)
+        });
+    }
+
     removeSong(pIndex) {
         this.songlist.splice(pIndex, 1);
 
-        cookieManager.addCookie('songlist', JSON.stringify(this.songlist));
+        this.updateServerSongList();
     }
 
     addSong(pArtiste, pTitle, pPenalty, pPoints) {
@@ -45,7 +55,7 @@ class Songlist {
             status: SongStatus.ToDo
         });
 
-        cookieManager.addCookie('songlist', JSON.stringify(this.songlist));
+        this.updateServerSongList();
     }
 
     setSonglist(pSonglist) {
@@ -59,7 +69,7 @@ class Songlist {
     setCurrentSong(pCurrentSongIndex) {
         this.currentSong = pCurrentSongIndex;
         this.songlist[this.currentSong].isAlreadyPlayed = true;
-        cookieManager.addCookie('songlist', JSON.stringify(this.songlist));
+        this.updateServerSongList();
         this.songlist[this.currentSong].isArtistFound = false;
         this.songlist[this.currentSong].isTitleFound = false;
         this.songlist[this.currentSong].ispenaltyFound = false;

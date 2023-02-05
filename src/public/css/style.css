@@ -30,7 +30,7 @@ img.icon {
 }
 
 img.recording {
-    content: url('/src/resources/icons/recording.svg');
+    content: url('/resources/icons/recording.svg');
     animation: blink 4s linear infinite;
 }
 

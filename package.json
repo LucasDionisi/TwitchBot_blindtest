@@ -1,0 +1,24 @@
+{
+  "name": "twitchbot-blindtest",
+  "version": "1.0.0",
+  "description": "Bot playing blindtest with viewers on twitch",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "node src/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LucasDionisi/twitchBOT-blindtest.git"
+  },
+  "author": "Lucas Dionisi",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/LucasDionisi/twitchBOT-blindtest/issues"
+  },
+  "homepage": "https://github.com/LucasDionisi/twitchBOT-blindtest#readme",
+  "dependencies": {
+    "body-parser": "^1.20.1",
+    "express": "^4.18.2",
+    "package.json": "^2.0.1"
+  }
+}

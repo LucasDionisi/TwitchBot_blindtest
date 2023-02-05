@@ -1,18 +1,30 @@
 function onClientStrarted() {
-    try {
-        Songlist.getInstance().setSonglist(JSON.parse(cookieManager.getCookie('songlist')));
-    } catch (error) {
-        toastMessage.sendInfo('Impossible de récupérer la précédente songlist.');
-    }
-    
-    try {
-        Scoreboard.getInstance().setScoreboard(JSON.parse(cookieManager.getCookie('score')));
-    } catch (error) {
-        toastMessage.sendInfo('Impossible de récupérer le précédent tableau des scores.');
-    }
 
-    refreshSongList();
-    refreshScoreboard();
+    $.ajax({
+        type: "GET",
+        url: "/api/songlist",
+        success: function (response) {
+            try {
+                Songlist.getInstance().setSonglist(response);
+                refreshSongList();
+            } catch (error) {
+                toastMessage.sendInfo('Impossible de récupérer la précédente songlist.');
+            }
+        }
+    });
+
+    $.ajax({
+        type: "GET",
+        url: "/api/scoreboard",
+        success: function (response) {
+            try {
+                Scoreboard.getInstance().setScoreboard(response);
+                refreshScoreboard();
+            } catch (error) {
+                toastMessage.sendInfo('Impossible de récupérer le précédent tableau des scores.');
+            }
+        }
+    });
 }
 
 function refreshSongList() {
@@ -25,8 +37,8 @@ function refreshSongList() {
         // Possible to add column to edit
         // <td><img class="icon edit" src="resources/icons/edit.svg" title="edit" alt="edit a song"></td>
         var elem = `
-            <tr class="${song.isAlreadyPlayed ? 'done': ''}">
-                <td>${index+1}</td>
+            <tr class="${song.isAlreadyPlayed ? 'done' : ''}">
+                <td>${index + 1}</td>
                 <td>${song.artist}</td>
                 <td>${song.title}</td>
                 <td>${song.penalty}</td>
@@ -57,7 +69,7 @@ function refreshSongList() {
 
 function refreshScoreboard() {
     const scores = Scoreboard.getInstance().getScores();
-    
+
     var tabScore = $('div#scores table tbody');
     tabScore.empty();
 
@@ -109,7 +121,7 @@ $('#addSongBtn').on('click', function () {
         toastMessage.sendError('Veuillez remplir tous les champs.');
     } else {
         const artist = $('#artistInput').val();
-        const title  = $('#titleInput').val();
+        const title = $('#titleInput').val();
         const penalty = $('#penaltyInput').val();
         const points = $('#pointsInput').val();
 

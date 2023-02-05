@@ -3,7 +3,6 @@ class Scoreboard {
     static instance = null;
 
     constructor() {
-        // TODO, just json instead of jsonArray
         this.scores = [];
     }
 
@@ -53,6 +52,12 @@ class Scoreboard {
             });
         }
 
-        cookieManager.addCookie('score', JSON.stringify(this.scores));
+        $.ajax({
+            type: "POST",
+            url: "/api/scoreboard",
+            dataType: 'json',
+            contentType: 'application/json',
+            data: JSON.stringify(this.scores)
+        });
     }
 }

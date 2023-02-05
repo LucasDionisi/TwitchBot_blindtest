@@ -15,6 +15,8 @@ class Client {
             this.tmiClient.on('message', (channel, tags, message, self) => {
                 this.onMessage(channel, tags, message, self)
             });
+        }).fail(() => {
+            toastMessage.sendError(`Aucun fichier twitch_credentials.json existant.`);
         });
     }
 
