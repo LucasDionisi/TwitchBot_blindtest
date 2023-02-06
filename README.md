@@ -39,7 +39,7 @@ In folder ``src/public/config/`` duplicate the file ``twitch_credentials_templat
 
 Install the last version of [Node js](https://nodejs.org/). 
 
-Run ```npm install``` to install all dependencies and start the bot with ```npm start```.
+Run a terminal and write ```npm install``` to install all dependencies and start the bot with ```npm start```.
 
 Your bot is now connected to your twitch channel and you can control through [http://localhost:8080](http://localhost:8080).
 
