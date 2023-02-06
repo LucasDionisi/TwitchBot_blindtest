@@ -18,7 +18,6 @@
   "homepage": "https://github.com/LucasDionisi/twitchBOT-blindtest#readme",
   "dependencies": {
     "body-parser": "^1.20.1",
-    "express": "^4.18.2",
-    "package.json": "^2.0.1"
+    "express": "^4.18.2"
   }
 }
