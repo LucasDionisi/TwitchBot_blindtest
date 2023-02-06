@@ -37,7 +37,7 @@ Dans le dossier ``src/public/config/`` vous devez dupliquer le fichier ``twitch_
 
 Installez la dernière version de [Node js](https://nodejs.org/). 
 
-Lancez ```npm install``` pour installer toutes les dépendances et lancez le bot avec ```npm start```.
+Lancez un terminal et tapez ```npm install``` pour installer toutes les dépendances et lancez le bot avec ```npm start```.
 
 Votre bot est maintenant connecté à votre chaine twitch et vous pouvez le contrôler via [http://localhost:8080](http://localhost:8080).
 
