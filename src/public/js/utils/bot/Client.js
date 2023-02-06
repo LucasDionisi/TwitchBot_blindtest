@@ -27,7 +27,7 @@ class Client {
 
     initTmiClient(twitchCredentials) {
         this.tmiClient = new tmi.Client({
-            options: { debug: true }, // False in prod mode
+            options: { debug: false }, // False in prod mode
             identity: {
                 username: twitchCredentials.botname,
                 password: twitchCredentials.oauthKey
