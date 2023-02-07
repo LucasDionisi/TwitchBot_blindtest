@@ -1,7 +1,6 @@
 # TwitchBot_blindtest
 
 ## 🤯 Comment ça fonctionne ?
----
 À travers une interface web, vous allez pouvoir créer une liste de musique pour jouer à un blindtest avec vos spectateurs sur twitch.
 
 ![UI](/gitImg/UI.png)
@@ -19,7 +18,6 @@ Une chanson peut être supprimée ou bien lancée. Une fois lancée (appuyer sur
 Le tableau des points permet d'ajouter ou de supprimer des points à un utilisateur.
 
 ## 🙏 Me soutenir
----
 Vous pouvez utiliser gratuitement ce bot. Si vous voulez me soutenir, vous pouvez faire une donation [ici](https://www.paypal.me/lucasdionisi) 🤩💙.
 
 ## ⚙ Installation
@@ -52,7 +50,6 @@ Note: Vous pouvez utiliser votre propre compte Twitch, si vous voulez utiliser v
 _Les librairies utilisées sont : [Tmi js](https://tmijs.com/), [String similarity](https://npm.runkit.com/string-similarity), [jQuery](https://jquery.com/) et [jQuery toast](https://github.com/kamranahmedse/jquery-toast-plugin)._
 
 ## 💡 Informations
----
 Les messages du bot sont écrits en français. Dans une prochaine version, le choix de la langue sera possible.
 
 Les prochaines mises a jour :
@@ -62,5 +59,4 @@ Les prochaines mises a jour :
 - Possibilité de modifier le seuil de StringSimilarity.
 
 ## 💌 Remarks or Questions / Remarques ou Questions
----
 Si vous avez une question ou une remarque, n'hésitez pas. Je reste disponnible ici pour bien par mail : lucas.dionisi@pro
