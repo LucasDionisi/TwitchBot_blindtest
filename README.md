@@ -3,7 +3,6 @@
 🥖 La version française : [ici](README.fr.md) 🥖
 
 ## 🤯 How does it work?
----
 Through a web interface, you will be able to create a music list to play a musical blindtest with your viewers on twitch.
 
 ![UI](/gitImg/UI.png)
@@ -21,11 +20,9 @@ A song can be deleted or started. Once started (press the 'play' button), the bo
 The scoreboard allows you to add or remove points to a user.
 
 ## 🙏 Support me
----
 You can use this bot for free. If you want to support me, you can donate [here](https://www.paypal.me/lucasdionisi) 🤩💙.
 
 ## ⚙ Installation
----
 ### 📝 Bot setup
 In folder ``src/public/config/`` duplicate the file ``twitch_credentials_template.json`` in ``twitch_credentials.json``. Open file and replace data bellow with your bot name, the token and the twitch channel where the robot will be used.
 
@@ -54,7 +51,6 @@ Note: You can use your own Twitch account, if you want to have your pseudo for y
 _The librairies used are: [Tmi js](https://tmijs.com/), [String similarity](https://npm.runkit.com/string-similarity), [jQuery](https://jquery.com/) and [jQuery toast](https://github.com/kamranahmedse/jquery-toast-plugin)._
 
 ## 💡 Informations
----
 Bot messages are written in french. In a future version, the choice of the language will be possible.
 
 The next updates :
@@ -64,5 +60,4 @@ The next updates :
 - Possibility to change the StringSimilarity threshold.
 
 ## 💌 Remarks or Questions
----
 If you have a question or a remark, do not hesitate. I remain available here for well by mail : lucas.dionisi@pro
