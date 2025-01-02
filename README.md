@@ -43,7 +43,10 @@ Your bot is now connected to your twitch channel and you can control through [ht
 ### 🔏 Where find the twitch token?
 First, you have to create a [Twitch](https://www.twitch.tv/) account for your bot.
 
-Retrieve your [Twitch token](https://twitchapps.com/tmi/) and don't share it! This token permit to have a full control on your new twitch account.
+Retrieve your [Twitch token](https://twitchtokengenerator.com/) and don't share it! This token permit to have a full control on your new twitch account.
+Select : I am here to get a ... Bot chat token
+
+If your bot needs to use private messages on Twitch, you must set whispers:read and whispers:edit to "yes". Remember to regenerate the API key.
 
 Note: You can use your own Twitch account, if you want to have your pseudo for you bot.
 
